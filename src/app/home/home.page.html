@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card" button="true">
+      <img src="/assets/images/app/cochabamba-sorprendente.jpg" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>Toma un pequeño tour</ion-card-subtitle>
+        <ion-card-title><b>Bienvenido a {{appConstantsService.appName}}</b></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p> Descubre todas las funcionalidades que {{appConstantsService.appName}} tiene para ti.</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-button shape="round" expand="full" size="smal" color="primary">
+      <ion-icon slot="start" name="log-in"></ion-icon>
+        Ingresa
+    </ion-button>
+    <ion-button shape="round" expand="full" size="smal" color="light">
+      <ion-icon slot="start" name="log-in"></ion-icon>
+        registrate
+    </ion-button>
+</ion-content>
