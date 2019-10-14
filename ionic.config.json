@@ -1,5 +1,7 @@
 {
   "name": "CochabambaTour",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
