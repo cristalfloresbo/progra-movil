@@ -12,9 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  },  { path: 'turistic-place', loadChildren: './turistic-place/turistic-place.module#TuristicPlacePageModule' }
+    path: 'places',
+    loadChildren: () => import('./places/places.module').then(m => m.PlacesPageModule)
+  },
+  { path: 'turistic-place', loadChildren: './turistic-place/turistic-place.module#TuristicPlacePageModule' }
 
 ];
 
