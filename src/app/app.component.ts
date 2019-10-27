@@ -17,9 +17,9 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Resources',
-      url: '/list',
-      icon: 'list'
+      title: 'Places',
+      url: '/places',
+      icon: 'globe'
     }
   ];
 
