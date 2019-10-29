@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { AuthenticateService } from './service/authentication.service';
 
 @Component({
     selector: 'app-register',
-    templateUrl: 'register.component.html'
+    templateUrl: 'register.component.html',
+    providers: [AuthenticateService] 
 })
 export class RegisterComponent {
     registrationForm = new FormGroup({
@@ -15,9 +17,17 @@ export class RegisterComponent {
             Validators.required,
             Validators.minLength(8),
             Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}')]
-        ))});
+        ))
+    });
+
+    constructor(private authService: AuthenticateService) {}
 
     registrar() {
-        console.log(this.registrationForm);
+        this.authService.registerUser(this.registrationForm.value)
+            .then(res => {
+                console.log(res);
+            }, err => {
+                console.log(err);
+            })
     }
 }
