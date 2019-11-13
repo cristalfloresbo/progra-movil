@@ -13,47 +13,111 @@
     <ion-card-content>
       <form [formGroup]="registrationForm">
         <ion-item>
-          <ion-label>Email: </ion-label>
-          <ion-input type="email" formControlName="email"></ion-input>
+          <ion-label>Name: </ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
         </ion-item>
         <ion-item no-padding lines="none" class="validator-error"
-          *ngIf="registrationForm.controls.email.hasError('required') 
-          && registrationForm.controls.email.touched">
+         *ngIf="registrationForm.controls.name.hasError('required') 
+              && registrationForm.controls.name.touched">
           <ion-text color="danger">
-              <p>Please Enter a Email!</p>
+            <p>Please Enter a name!</p>
+          </ion-text>
+        </ion-item>
+        <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.name.hasError('minlength') 
+          && registrationForm.controls.name.touched">
+          <ion-text color="danger">
+            <p>The name needs at least 3 characters.</p>
+          </ion-text>
+        </ion-item>
+        <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.name.hasError('maxlength') 
+          && registrationForm.controls.name.touched">
+          <ion-text color="danger">
+            <p>The name must be a maximum of 255 characters.</p>
           </ion-text>
         </ion-item>
         <ion-item no-padding lines="none" class="validator-error"
-          *ngIf="registrationForm.controls.email.hasError('pattern') 
+         *ngIf="registrationForm.controls.name.hasError('pattern') 
+              && registrationForm.controls.name.touched">
+          <ion-text color="danger">
+            <p>Please enter a valid name.</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-label>Last Name: </ion-label>
+            <ion-input type="text" formControlName="lastName"></ion-input>
+          </ion-item>
+          <ion-item no-padding lines="none" class="validator-error" 
+          *ngIf="registrationForm.controls.lastName.hasError('required') 
+                && registrationForm.controls.lastName.touched">
+            <ion-text color="danger">
+              <p>Please Enter a last name!</p>
+            </ion-text>
+          </ion-item>
+          <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.lastName.hasError('minlength') 
+          && registrationForm.controls.lastName.touched">
+          <ion-text color="danger">
+            <p>The last name needs at least 3 characters.</p>
+          </ion-text>
+        </ion-item>
+        <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.lastName.hasError('maxlength') 
+          && registrationForm.controls.lastName.touched">
+          <ion-text color="danger">
+            <p>The last name must be a maximum of 255 characters.</p>
+          </ion-text>
+        </ion-item>
+          <ion-item no-padding lines="none" class="validator-error"
+           *ngIf="registrationForm.controls.lastName.hasError('pattern') 
+                && registrationForm.controls.lastName.touched">
+            <ion-text color="danger">
+              <p>Please enter a valid last name.</p>
+            </ion-text>
+          </ion-item>
+        <ion-item>
+          <ion-label>Email: </ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.email.hasError('required') 
           && registrationForm.controls.email.touched">
           <ion-text color="danger">
-              <p>Please enter a valid email address.</p>
-          </ion-text>          
+            <p>Please Enter a Email!</p>
+          </ion-text>
+        </ion-item>
+        <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.email.hasError('pattern') 
+          && registrationForm.controls.email.touched">
+          <ion-text color="danger">
+            <p>Please enter a valid email address.</p>
+          </ion-text>
         </ion-item>
         <ion-item>
           <ion-label>Password: </ion-label>
           <ion-input type="password" formControlName="password"></ion-input>
         </ion-item>
         <ion-item no-padding lines="none" class="validator-error"
-          *ngIf="registrationForm.controls.password.hasError('required') 
+         *ngIf="registrationForm.controls.password.hasError('required') 
           && registrationForm.controls.password.touched">
           <ion-text color="danger">
-              <p>Please Enter a Password!</p>
+            <p>Please Enter a Password!</p>
           </ion-text>
         </ion-item>
-        <ion-item no-padding lines="none" class="validator-error"
-          *ngIf="registrationForm.controls.password.hasError('minlength') 
+        <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.password.hasError('minlength') 
           && registrationForm.controls.password.touched">
           <ion-text color="danger">
-              <p>The password needs at least 8 characters.</p>
+            <p>The password needs at least 8 characters.</p>
           </ion-text>
         </ion-item>
-        <ion-item no-padding lines="none" class="validator-error"
-          *ngIf="registrationForm.controls.password.hasError('pattern')
+        <ion-item no-padding lines="none" class="validator-error" 
+        *ngIf="registrationForm.controls.password.hasError('pattern')
            && registrationForm.controls.password.touched">
-           <ion-text color="danger">
-              <p>Please Enter One Upper Case and One Lower Case, One Special Characters and One Number</p>
-           </ion-text>
+          <ion-text color="danger">
+            <p>Please Enter One Upper Case and One Lower Case, One Special Characters and One Number</p>
+          </ion-text>
         </ion-item>
       </form>
     </ion-card-content>
@@ -61,7 +125,6 @@
   <ion-button shape="round" expand="full" size="smal" color="primary" (click)="registrar()"
     [disabled]="!registrationForm.valid">Send
   </ion-button>
-  <ion-button shape="round" expand="full" size="smal" color="light"
-   [routerLink]="['']">Cancelar
+  <ion-button shape="round" expand="full" size="smal" color="light" [routerLink]="['']">Cancelar
   </ion-button>
 </ion-content>

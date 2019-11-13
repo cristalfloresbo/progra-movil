@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyDJtad-LNdQzIeBvOU5ri9DXKwZUSvxhys",
-    authDomain: "programovil-51d72.firebaseapp.com",
-    databaseURL: "https://programovil-51d72.firebaseio.com",
-    projectId: "programovil-51d72",
-    storageBucket: "programovil-51d72.appspot.com",
-    messagingSenderId: "203396406618",
-    appId: "1:203396406618:web:132362e5a2c12458626763",
-    measurementId: "G-ZNHCN852NB"
+    apiKey: "AIzaSyBmd-HnzyLrmXCAFgvPpIYQo7vuLaqzUtI",
+    authDomain: "movil-tour.firebaseapp.com",
+    databaseURL: "https://movil-tour.firebaseio.com",
+    projectId: "movil-tour",
+    storageBucket: "movil-tour.appspot.com",
+    messagingSenderId: "540386339260",
+    appId: "1:540386339260:web:58359c5686deaa586463b9",
+    measurementId: "G-P8B6N5R9DR"
   }
 };
 
